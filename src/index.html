@@ -4,14 +4,49 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/assets/images/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.com/css2?family=Inter:wght@400;900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="css/base/normalize.css" />
 		<link rel="stylesheet" href="css/base/base.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<title>Vite App</title>
 	</head>
 	<body>
-		<h1>WEB WITH VITE</h1>
-		<!-- <img src="./assets/images/cute-cat.webp" alt="" /> -->
+		<main class="main">
+			<div class="main-clocks">
+				<div class="digital-clock">
+					<div class="time">
+						<span id="hours" class="hours">11</span>
+						<span class="separator">:</span>
+						<span id="minutes" class="minutes">06</span>
+					</div>
+					<div class="date">
+						<span id="day-of-week">Saturday</span>
+						<span id="day" class="day">14</span>
+						<span id="month" class="month">January</span>
+						<span id="year" class="year">2023</span>
+					</div>
+				</div>
+
+				<div class="analogic-clock">
+					<div class="outer-clock-face">
+						<div class="marking marking-one"></div>
+						<div class="marking marking-two"></div>
+						<div class="marking marking-three"></div>
+						<div class="marking marking-four"></div>
+						<div class="inner-clock-face">
+							<div id="hour-hand" class="hand hour-hand"></div>
+							<div id="minute-hand" class="hand min-hand"></div>
+							<div id="second-hand" class="hand second-hand"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 		<script type="module" src="./js/index.js"></script>
 	</body>
 </html>

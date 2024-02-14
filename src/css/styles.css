@@ -1,6 +1,173 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--hours-hand-rotate: 0;
+	--minutes-hand-rotate: 0;
+	--seconds-hand-rotate: 0;
+}
+
 body {
+	margin: 2rem;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #111;
+	font-family: 'Inter', sans-serif;
+	color: rgb(222, 228, 233);
+}
+
+.secondary-clocks {
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-bottom: 2rem;
+}
+
+.clock {
+	width: 500px;
+	height: 300px;
+}
+
+.main-clocks {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 500px;
+	padding: 2rem;
+	border: 1px solid white;
+}
+
+.digital-clock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.time {
 	margin: 0;
-	font-family: sans-serif;
-	background-color: #333;
-	/* background-image: url(../assets/images/sleep-cat.jpeg); */
+	font-size: 8rem;
+	font-weight: 900;
+}
+
+.date {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.clock--small {
+	border: 1px solid white;
+	height: 150px;
+}
+
+.analogic-clock {
+	width: 400px;
+	height: 400px;
+	padding: 0.8rem;
+	outline: 7px solid #282828;
+	border-radius: 50%;
+	box-shadow:
+		-4px -4px 10px rgba(67, 67, 67, 0.5),
+		inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+		inset -4px -4px 10px rgba(67, 67, 67, 0.5),
+		4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.outer-clock-face {
+	position: relative;
+	background-color: #282828;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.outer-clock-face::after,
+.outer-clock-face::before,
+.marking {
+	content: '';
+	position: absolute;
+	left: 49%;
+	width: 1%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.outer-clock-face::after {
+	transform: rotate(90deg);
+}
+
+.marking {
+	background-color: #bdbdcb;
+	width: 3px;
+}
+
+.marking-one {
+	transform: rotate(30deg);
+}
+
+.marking-two {
+	transform: rotate(60deg);
+}
+
+.marking-three {
+	transform: rotate(120deg);
+}
+
+.marking-four {
+	transform: rotate(150deg);
+}
+
+.inner-clock-face {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	background-color: #282828;
+	z-index: 1;
+}
+
+.inner-clock-face::before {
+	content: '';
+	position: absolute;
+	top: 49.5%;
+	left: 49.5%;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: red;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.hand {
+	position: absolute;
+	bottom: 50%;
+	width: 2px;
+	left: calc(50% - 2px);
+	border-radius: 6px;
+	background-color: #fff;
+	transform-origin: bottom;
+}
+
+.hour-hand {
+	height: 100px;
+	width: 8px;
+	transform: rotate(var(--hours-hand-rotate));
+}
+
+.min-hand {
+	height: 120px;
+	width: 8px;
+	transform: rotate(var(--minutes-hand-rotate));
+}
+
+.second-hand {
+	background-color: red;
+	width: 2px;
+	height: 150px;
+	transform: rotate(var(--seconds-hand-rotate));
 }
